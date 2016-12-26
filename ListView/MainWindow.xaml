@@ -3,7 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListView Name="MyList" ItemsSource="{Binding}" />
+        <ListView Name="MyList" ItemsSource="{Binding}" FontFamily="Imprint MT Shadow">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Number" />
+                    </GridView.Columns>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
 
 
     </Grid>
