@@ -8,8 +8,8 @@ namespace ListView
 {
     public class Student
     {
-        public int ID;
-        public string Name;
-        public int Year;
+        public int ID { set; get; }
+        public string Name { set; get; }
+        public int Year { set; get; }
     }
 }

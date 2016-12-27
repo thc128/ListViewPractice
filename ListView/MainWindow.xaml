@@ -1,18 +1,47 @@
 ﻿<Window x:Class="ListView.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" >
+    <Window.Resources>
+    <Style TargetType="ListViewItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" />
+                            <TextBlock Grid.Column="1" Text="{Binding Path=ID}"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Path=Name}"/>
+                            <TextBlock Grid.Column="3" Text="{Binding Path=Year}"/>
+                        </Grid>
+                </ControlTemplate>
+            </Setter.Value>    
+        </Setter>
+    </Style>
+    </Window.Resources>
     <Grid>
-        <ListView Name="MyList" ItemsSource="{Binding}" FontFamily="Imprint MT Shadow" Foreground="Olive" >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <ListView Name="MyList" ItemsSource="{Binding}" FontFamily="Imprint MT Shadow" Foreground="Olive" Grid.Row="0">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Name" />
+                        <GridViewColumn Header="My List" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
 
 
         </ListView>
+       <!-- <Button Name="MyNewPageButton" FontSize="20" Content="To the new page" Grid.Row="1" Click="MyNewPageButton_Click" FontFamily="Jokerman" />
+        -->
     </Grid>
 </Window>
