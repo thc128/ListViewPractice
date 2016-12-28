@@ -21,6 +21,7 @@ namespace ListView
             else
             {
                 CreateFile();
+                throw new Exception("File not found");
             }
         }
 
