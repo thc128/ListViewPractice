@@ -11,7 +11,7 @@ namespace ListView
     class XML_Access
     {
         public static XElement DataRoot;
-        public static string DataPath = @"C:\Users\asaf\Desktop\תרגול בC++\ListView\ListView\data1.xml";
+        public static string DataPath =  @"..\..\data1.xml";
         public XML_Access()
         {
             if(File.Exists(DataPath))
